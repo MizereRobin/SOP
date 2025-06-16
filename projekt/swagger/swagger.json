@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Radio API",
+    "version": "1.0.0",
+    "description": "API for managing radio station data"
+  },
+  "paths": {
+    "/radios": {
+      "get": {
+        "summary": "List broadcast addresses by city",
+        "tags": ["Radios"],
+        "description": "Get a list of unique broadcast addresses for a specific city.",
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "description": "The name of the city",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of broadcast addresses",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid city parameter"
+          }
+        }
+      }
+    },
+    "/radios/from": {
+      "get": {
+        "summary": "List radios from a location sorted by power",
+        "tags": ["Radios"],
+        "description": "Get a list of radio stations broadcasted from a specific location, sorted by their power in descending order.",
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "description": "The name of the broadcast location",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of radio stations with their power",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "radio_name": {
+                        "type": "string",
+                        "description": "Name of the radio station"
+                      },
+                      "power": {
+                        "type": "number",
+                        "description": "Broadcasting power"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid location parameter"
+          }
+        }
+      }
+    },
+    "/radios/with-city-name": {
+      "get": {
+        "summary": "List radios that include city name in their title",
+        "tags": ["Radios"],
+        "description": "Get a list of radios whose name includes the name of their broadcast location.",
+        "responses": {
+          "200": {
+            "description": "List of radio names",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
