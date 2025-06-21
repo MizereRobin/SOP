@@ -19,13 +19,13 @@ namespace Kliens
             {
                 if (newform is Lekerdez || newform is BejelentkezesForm || newform is RegisztracioForm)
                 {
-                    activeform.Close();
+                    activeform.Hide();
                     Form newf = newform;
                     newf.Show();
                 }
                 else
                 {
-                    activeform.Close();
+                    activeform.Hide();
                     Form newf = new BejelentkezesForm();
                     newf.Show();
                 }
@@ -34,12 +34,15 @@ namespace Kliens
         public MenuForm()
         {
             InitializeComponent();
+            menüToolStripMenuItem.Enabled = false;
         }
 
         private void lekérdezésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Lekerdez lekerdez = new Lekerdez();
+            this.Hide();
+            Lekerdez lekerdez = new Lekerdez(this);
             lekerdez.Show();
+            //this.Show();
         }
 
         private void létrehozásToolStripMenuItem_Click(object sender, EventArgs e)

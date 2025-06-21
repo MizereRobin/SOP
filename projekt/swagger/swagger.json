@@ -1,22 +1,20 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Radio API",
+    "title": "Sugárzási API",
     "version": "1.0.0",
-    "description": "API for managing radio station data"
+    "description": "API három feladat megoldásához: sugárzási címek, teljesítmény, csatornák városnévvel"
   },
   "paths": {
-    "/radios": {
+    "/sugarzasihely": {
       "get": {
-        "summary": "List broadcast addresses by city",
-        "tags": ["Radios"],
-        "description": "Get a list of unique broadcast addresses for a specific city.",
+        "summary": "Adott település sugárzási címei (egyediek)",
         "parameters": [
           {
-            "name": "city",
+            "name": "telepules",
             "in": "query",
-            "description": "The name of the city",
             "required": true,
+            "description": "A település neve (pl. Budapest)",
             "schema": {
               "type": "string"
             }
@@ -24,35 +22,31 @@
         ],
         "responses": {
           "200": {
-            "description": "List of broadcast addresses",
+            "description": "Egyedi címek listája",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "items": { "type": "string" }
                 }
               }
             }
           },
           "400": {
-            "description": "Missing or invalid city parameter"
+            "description": "Hiányzó paraméter"
           }
         }
       }
     },
-    "/radios/from": {
+    "/teljesitmeny": {
       "get": {
-        "summary": "List radios from a location sorted by power",
-        "tags": ["Radios"],
-        "description": "Get a list of radio stations broadcasted from a specific location, sorted by their power in descending order.",
+        "summary": "Adott helyről sugárzott csatornák és teljesítményük (csökkenő sorrend)",
         "parameters": [
           {
-            "name": "location",
+            "name": "adohely",
             "in": "query",
-            "description": "The name of the broadcast location",
             "required": true,
+            "description": "A sugárzás helye (pl. Miskolc)",
             "schema": {
               "type": "string"
             }
@@ -60,7 +54,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List of radio stations with their power",
+            "description": "Csatornák és teljesítmény",
             "content": {
               "application/json": {
                 "schema": {
@@ -68,14 +62,8 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "radio_name": {
-                        "type": "string",
-                        "description": "Name of the radio station"
-                      },
-                      "power": {
-                        "type": "number",
-                        "description": "Broadcasting power"
-                      }
+                      "csatorna": { "type": "string" },
+                      "teljesitmeny": { "type": "number" }
                     }
                   }
                 }
@@ -83,26 +71,22 @@
             }
           },
           "400": {
-            "description": "Missing or invalid location parameter"
+            "description": "Hiányzó paraméter"
           }
         }
       }
     },
-    "/radios/with-city-name": {
+    "/varosinallomasnev": {
       "get": {
-        "summary": "List radios that include city name in their title",
-        "tags": ["Radios"],
-        "description": "Get a list of radios whose name includes the name of their broadcast location.",
+        "summary": "Olyan csatornák nevei, amelyek tartalmazzák az adóhely nevét",
         "responses": {
           "200": {
-            "description": "List of radio names",
+            "description": "Csatornák listája",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "items": { "type": "string" }
                 }
               }
             }

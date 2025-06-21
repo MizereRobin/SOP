@@ -1,77 +1,107 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("swagger.json");
-const { config } = require("../config.js");
+const swaggerDocument = require("./swagger/swagger.json");
+const { config } = require("./config/config.js");
 
 const app = express();
 const port = config.server.port;
 
-// MySQL adatbázis kapcsolat
 const pool = mysql.createPool(config.database);
 
-// Middleware
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Főoldal
 app.get("/", (req, res) => {
   res.send("Rádió API");
 });
 
-// 1. Végpont: Sugárzási címek lekérdezése város alapján
-app.get("/radios", async (req, res) => {
+app.get("/sugarzasihely", async (req, res) => {
   try {
-    const { city } = req.query;
-    if (!city) {
-      return res.status(400).json({ error: "City parameter is required." });
+    const { telepules } = req.query;
+    if (!telepules) {
+      return res.status(400).json({ error: "telepules paraméter kötelező." });
     }
 
     const [rows] = await pool.execute(
-      "SELECT DISTINCT broadcast_address FROM radios WHERE broadcast_location = ?",
-      [city]
+      `SELECT DISTINCT cim, csatorna, frekvencia
+       FROM kiosztas
+       WHERE adohely = ? AND cim IS NOT NULL
+       GROUP BY cim`,
+      [telepules]
     );
-    res.json(rows.map(row => row.broadcast_address));
+
+    res.json(rows.map(row => row.cim));
   } catch (err) {
-    console.error(`Error fetching broadcast addresses: ${err}`);
-    res.status(500).json({ error: "Failed to fetch broadcast addresses." });
+    console.error("Hiba /sugarzasihely alatt:", err);
+    res.status(500).json({ error: "Lekérdezési hiba." });
   }
 });
 
-// 2. Végpont: Rádiók listázása egy helyről teljesítmény szerint
-app.get("/radios/from", async (req, res) => {
+app.get("/teljesitmeny", async (req, res) => {
   try {
-    const { location } = req.query;
-    if (!location) {
-      return res.status(400).json({ error: "Location parameter is required." });
+    const { adohely } = req.query;
+    if (!adohely) {
+      return res.status(400).json({ error: "adohely paraméter kötelező." });
     }
 
     const [rows] = await pool.execute(
-      "SELECT radio_name, power FROM radios WHERE broadcast_location = ? ORDER BY power DESC",
-      [location]
+      `SELECT csatorna, teljesitmeny
+       FROM kiosztas
+       WHERE adohely = ?
+       ORDER BY teljesitmeny DESC`,
+      [adohely]
     );
+
     res.json(rows);
   } catch (err) {
-    console.error(`Error fetching radios by location: ${err}`);
-    res.status(500).json({ error: "Failed to fetch radios." });
+    console.error("Hiba /teljesitmeny alatt:", err);
+    res.status(500).json({ error: "Lekérdezési hiba." });
   }
 });
 
-// 3. Végpont: Rádiók listázása, amelyek nevében szerepel a város neve
-app.get("/radios/with-city-name", async (req, res) => {
+app.get("/varosinallomasnev", async (req, res) => {
   try {
     const [rows] = await pool.execute(
-      "SELECT radio_name FROM radios WHERE radio_name LIKE CONCAT('%', broadcast_location, '%')"
+      `SELECT csatorna
+       FROM kiosztas
+       WHERE csatorna LIKE CONCAT('%', adohely, '%')`
     );
-    res.json(rows.map(row => row.radio_name));
+
+    res.json(rows.map(row => row.csatorna));
   } catch (err) {
-    console.error(`Error fetching radios with city name: ${err}`);
-    res.status(500).json({ error: "Failed to fetch radios." });
+    console.error("Hiba /varosinallomasnev alatt:", err);
+    res.status(500).json({ error: "Lekérdezési hiba." });
   }
 });
 
-// Szerver indítása
+// POST lesz ha megcsinálom
+app.get("/teljesitmeny", async (req, res) => {
+  try {
+    const { adohely } = req.query;
+    if (!adohely) {
+      return res.status(400).json({ error: "adohely paraméter kötelező." });
+    }
+
+    const [rows] = await pool.execute(
+      `SELECT csatorna, teljesitmeny
+       FROM kiosztas
+       WHERE adohely = ?
+       ORDER BY teljesitmeny DESC`,
+      [adohely]
+    );
+
+    res.json(rows);
+  } catch (err) {
+    console.error("Hiba /teljesitmeny alatt:", err);
+    res.status(500).json({ error: "Lekérdezési hiba." });
+  }
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
   console.log(`Swagger UI available at http://localhost:${port}/api-docs`);
 });
+
+

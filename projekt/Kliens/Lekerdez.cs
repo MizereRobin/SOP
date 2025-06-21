@@ -5,7 +5,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,11 +17,23 @@ namespace Kliens
     public partial class Lekerdez : Form
     {
         private static readonly HttpClient client = new HttpClient();
+        public Lekerdez(Form parent)
+        {
+            InitializeComponent();
+            //ParentForm.Parent = parent;
+            this.FormClosing += Lekerdez_FormClosing;
 
+        }
         public Lekerdez()
 
         {
             InitializeComponent();
+
+        }
+
+        private void Lekerdez_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //ParentForm.Show();
         }
 
         private async void btnFetchAddresses_Click(object sender, EventArgs e)
@@ -31,21 +45,21 @@ namespace Kliens
                 return;
             }
 
-            string apiUrl = $"http://localhost:3000/api/radios?city={city}";
+            string apiUrl = $"http://localhost:3000/sugarzasihely?telepules={city}";
 
             try
             {
                 var response = await client.GetAsync(apiUrl);
                 response.EnsureSuccessStatusCode();
 
-                string responseBody = await response.Content.ReadAsStringAsync();
-                var dataTable = ConvertJsonToDataTable(responseBody);
-                dataGridView.DataSource = dataTable;
+                var responseBody = await response.Content.ReadAsStringAsync();
+                richTextBoxData.Text = responseBody;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Hiba történt: {ex.Message}");
             }
+
         }
 
         private async void btnFetchRadios_Click(object sender, EventArgs e)
@@ -57,7 +71,7 @@ namespace Kliens
                 return;
             }
 
-            string apiUrl = $"http://localhost:3000/api/radios/from?location={location}";
+            string apiUrl = $"http://localhost:3000/teljesitmeny?adohely={location}";
 
             try
             {
@@ -65,8 +79,16 @@ namespace Kliens
                 response.EnsureSuccessStatusCode();
 
                 string responseBody = await response.Content.ReadAsStringAsync();
-                var dataTable = ConvertJsonToDataTable(responseBody);
-                dataGridView.DataSource = dataTable;
+
+                string[] datas = responseBody.Split('}');
+
+                
+
+                foreach (var data in datas)
+                {
+                    richTextBoxData.Text += data.Replace('{',' ').Replace('\"',' ').Replace('[',' ').Replace(']',' ').Replace(',',' ').Replace("  ","").Replace(' ','\t').TrimStart()+'\n';
+                }
+
             }
             catch (Exception ex)
             {
@@ -76,7 +98,7 @@ namespace Kliens
 
         private async void btnFetchRadiosWithCityName_Click(object sender, EventArgs e)
         {
-            string apiUrl = "http://localhost:3000/api/radios/with-city-name";
+            string apiUrl = "http://localhost:3000/varosinallomasnev";
 
             try
             {
@@ -84,8 +106,7 @@ namespace Kliens
                 response.EnsureSuccessStatusCode();
 
                 string responseBody = await response.Content.ReadAsStringAsync();
-                var dataTable = ConvertJsonToDataTable(responseBody);
-                dataGridView.DataSource = dataTable;
+                richTextBoxData.Text = responseBody;
             }
             catch (Exception ex)
             {
@@ -129,7 +150,7 @@ namespace Kliens
 
         }
 
-        
+
 
         private void txtCity_TextChanged(object sender, EventArgs e)
         {
@@ -158,7 +179,7 @@ namespace Kliens
 
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
         }
     }
