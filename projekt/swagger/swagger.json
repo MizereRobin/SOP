@@ -1,98 +1,14 @@
-{
-  "openapi": "3.0.0",
-  "info": {
-    "title": "Sugárzási API",
-    "version": "1.0.0",
-    "description": "API három feladat megoldásához: sugárzási címek, teljesítmény, csatornák városnévvel"
-  },
-  "paths": {
-    "/sugarzasihely": {
-      "get": {
-        "summary": "Adott település sugárzási címei (egyediek)",
-        "parameters": [
-          {
-            "name": "telepules",
-            "in": "query",
-            "required": true,
-            "description": "A település neve (pl. Budapest)",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Egyedi címek listája",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { "type": "string" }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Hiányzó paraméter"
-          }
-        }
-      }
-    },
-    "/teljesitmeny": {
-      "get": {
-        "summary": "Adott helyről sugárzott csatornák és teljesítményük (csökkenő sorrend)",
-        "parameters": [
-          {
-            "name": "adohely",
-            "in": "query",
-            "required": true,
-            "description": "A sugárzás helye (pl. Miskolc)",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Csatornák és teljesítmény",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "csatorna": { "type": "string" },
-                      "teljesitmeny": { "type": "number" }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Hiányzó paraméter"
-          }
-        }
-      }
-    },
-    "/varosinallomasnev": {
-      "get": {
-        "summary": "Olyan csatornák nevei, amelyek tartalmazzák az adóhely nevét",
-        "responses": {
-          "200": {
-            "description": "Csatornák listája",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { "type": "string" }
-                }
-              }
-            }
-          }
-        }
-      }
+"components": {
+  "securitySchemes": {
+    "bearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
     }
   }
-}
+},
+"security": [
+  {
+    "bearerAuth": []
+  }
+]
