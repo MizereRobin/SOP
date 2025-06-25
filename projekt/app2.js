@@ -34,6 +34,18 @@ function authenticateToken(req, res, next) {
 app.get("/", (req, res) => {
   res.send("Rádió API\nSwagger UI: http://localhost:3000/api-docs");
 });
+app.get("/megyek", async (req, res) => {
+  try {
+     const [rows] = await pool.execute(
+      `SELECT megye FROM regio`
+    );
+
+    res.json(rows.map(row => row.megye));
+  } catch (err) {
+    res.status(500).json({ error: "Lekérdezési hiba." });
+  }
+});
+
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;

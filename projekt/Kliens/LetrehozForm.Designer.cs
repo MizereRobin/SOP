@@ -40,23 +40,23 @@
             this.regisztrációToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTelepules = new System.Windows.Forms.GroupBox();
-            this.groupBoxKiosztas = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBoxMegye = new System.Windows.Forms.ComboBox();
-            this.labelTelepules = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.buttonTelepulesHozzaad = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelTelepules = new System.Windows.Forms.Label();
+            this.comboBoxMegye = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBoxKiosztas = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxCim = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxTeljesimeny = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxCsatorna = new System.Windows.Forms.TextBox();
             this.buttonKiosztasHozzaad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxAdohely = new System.Windows.Forms.ComboBox();
             this.textBoxFrekvencia = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxCsatorna = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxTeljesimeny = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxCim = new System.Windows.Forms.TextBox();
             this.labelBejelentkezve = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBoxTelepules.SuspendLayout();
@@ -159,6 +159,50 @@
             this.groupBoxTelepules.TabStop = false;
             this.groupBoxTelepules.Text = "Település Hozzáadása";
             // 
+            // buttonTelepulesHozzaad
+            // 
+            this.buttonTelepulesHozzaad.Location = new System.Drawing.Point(55, 186);
+            this.buttonTelepulesHozzaad.Name = "buttonTelepulesHozzaad";
+            this.buttonTelepulesHozzaad.Size = new System.Drawing.Size(75, 23);
+            this.buttonTelepulesHozzaad.TabIndex = 2;
+            this.buttonTelepulesHozzaad.Text = "Hozzáadás";
+            this.buttonTelepulesHozzaad.UseVisualStyleBackColor = true;
+            this.buttonTelepulesHozzaad.Click += new System.EventHandler(this.buttonTelepulesHozzaad_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Megye";
+            // 
+            // labelTelepules
+            // 
+            this.labelTelepules.AutoSize = true;
+            this.labelTelepules.Location = new System.Drawing.Point(7, 42);
+            this.labelTelepules.Name = "labelTelepules";
+            this.labelTelepules.Size = new System.Drawing.Size(53, 13);
+            this.labelTelepules.TabIndex = 2;
+            this.labelTelepules.Text = "Település";
+            // 
+            // comboBoxMegye
+            // 
+            this.comboBoxMegye.FormattingEnabled = true;
+            this.comboBoxMegye.Location = new System.Drawing.Point(7, 118);
+            this.comboBoxMegye.Name = "comboBoxMegye";
+            this.comboBoxMegye.Size = new System.Drawing.Size(165, 21);
+            this.comboBoxMegye.TabIndex = 1;
+            this.comboBoxMegye.SelectedIndexChanged += new System.EventHandler(this.comboBoxMegye_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // groupBoxKiosztas
             // 
             this.groupBoxKiosztas.Controls.Add(this.label6);
@@ -179,48 +223,53 @@
             this.groupBoxKiosztas.TabStop = false;
             this.groupBoxKiosztas.Text = "Kiosztás Hozzáaadása";
             // 
-            // textBox1
+            // label6
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 0;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 196);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Cím";
             // 
-            // comboBoxMegye
+            // textBoxCim
             // 
-            this.comboBoxMegye.FormattingEnabled = true;
-            this.comboBoxMegye.Location = new System.Drawing.Point(7, 118);
-            this.comboBoxMegye.Name = "comboBoxMegye";
-            this.comboBoxMegye.Size = new System.Drawing.Size(165, 21);
-            this.comboBoxMegye.TabIndex = 1;
+            this.textBoxCim.Location = new System.Drawing.Point(9, 212);
+            this.textBoxCim.Name = "textBoxCim";
+            this.textBoxCim.Size = new System.Drawing.Size(184, 20);
+            this.textBoxCim.TabIndex = 7;
             // 
-            // labelTelepules
+            // label5
             // 
-            this.labelTelepules.AutoSize = true;
-            this.labelTelepules.Location = new System.Drawing.Point(7, 42);
-            this.labelTelepules.Name = "labelTelepules";
-            this.labelTelepules.Size = new System.Drawing.Size(53, 13);
-            this.labelTelepules.TabIndex = 2;
-            this.labelTelepules.Text = "Település";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Teljesítmény";
             // 
-            // label2
+            // textBoxTeljesimeny
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Megye";
+            this.textBoxTeljesimeny.Location = new System.Drawing.Point(6, 123);
+            this.textBoxTeljesimeny.Name = "textBoxTeljesimeny";
+            this.textBoxTeljesimeny.Size = new System.Drawing.Size(187, 20);
+            this.textBoxTeljesimeny.TabIndex = 5;
             // 
-            // buttonTelepulesHozzaad
+            // label4
             // 
-            this.buttonTelepulesHozzaad.Location = new System.Drawing.Point(55, 186);
-            this.buttonTelepulesHozzaad.Name = "buttonTelepulesHozzaad";
-            this.buttonTelepulesHozzaad.Size = new System.Drawing.Size(75, 23);
-            this.buttonTelepulesHozzaad.TabIndex = 2;
-            this.buttonTelepulesHozzaad.Text = "Hozzáadás";
-            this.buttonTelepulesHozzaad.UseVisualStyleBackColor = true;
-            this.buttonTelepulesHozzaad.Click += new System.EventHandler(this.buttonTelepulesHozzaad_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Csatorna";
+            // 
+            // textBoxCsatorna
+            // 
+            this.textBoxCsatorna.Location = new System.Drawing.Point(4, 84);
+            this.textBoxCsatorna.Name = "textBoxCsatorna";
+            this.textBoxCsatorna.Size = new System.Drawing.Size(189, 20);
+            this.textBoxCsatorna.TabIndex = 4;
             // 
             // buttonKiosztasHozzaad
             // 
@@ -264,54 +313,6 @@
             this.textBoxFrekvencia.Name = "textBoxFrekvencia";
             this.textBoxFrekvencia.Size = new System.Drawing.Size(189, 20);
             this.textBoxFrekvencia.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Csatorna";
-            // 
-            // textBoxCsatorna
-            // 
-            this.textBoxCsatorna.Location = new System.Drawing.Point(4, 84);
-            this.textBoxCsatorna.Name = "textBoxCsatorna";
-            this.textBoxCsatorna.Size = new System.Drawing.Size(189, 20);
-            this.textBoxCsatorna.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 107);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Teljesítmény";
-            // 
-            // textBoxTeljesimeny
-            // 
-            this.textBoxTeljesimeny.Location = new System.Drawing.Point(6, 123);
-            this.textBoxTeljesimeny.Name = "textBoxTeljesimeny";
-            this.textBoxTeljesimeny.Size = new System.Drawing.Size(187, 20);
-            this.textBoxTeljesimeny.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 196);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Cím";
-            // 
-            // textBoxCim
-            // 
-            this.textBoxCim.Location = new System.Drawing.Point(9, 212);
-            this.textBoxCim.Name = "textBoxCim";
-            this.textBoxCim.Size = new System.Drawing.Size(184, 20);
-            this.textBoxCim.TabIndex = 7;
             // 
             // labelBejelentkezve
             // 

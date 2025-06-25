@@ -47,6 +47,7 @@ namespace Kliens
 
         private void létrehozásToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             if (AuthState.IsAuth)
             {
                 LetrehozForm l = new LetrehozForm();
@@ -57,6 +58,9 @@ namespace Kliens
                 Form newf = new BejelentkezesForm();
                 newf.Show(); ;
             }
+            */
+            LetrehozForm l = new LetrehozForm();
+            l.Show();
         }
 
         private void módosításToolStripMenuItem_Click(object sender, EventArgs e)

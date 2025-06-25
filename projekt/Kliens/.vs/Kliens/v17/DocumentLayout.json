@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\git\\SOP\\projekt\\Kliens\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|c:\\git\\sop\\projekt\\kliens\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|c:\\git\\sop\\projekt\\kliens\\authstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:authstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|c:\\git\\sop\\projekt\\kliens\\letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\lekerdez.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,16 +23,20 @@
       "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:lekerdez.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\authstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:authstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\bejelentkezesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:bejelentkezesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\bejelentkezesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:bejelentkezesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:letrehozform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Kliens||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
@@ -44,10 +48,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\lekerdez.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:lekerdez.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26F33265-02BE-45A9-B317-D82BEADC6DAF}|Kliens.csproj|C:\\git\\SOP\\projekt\\Kliens\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -69,11 +69,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AuthState.cs",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\AuthState.cs",
               "RelativeDocumentMoniker": "AuthState.cs",
@@ -81,8 +81,7 @@
               "RelativeToolTip": "AuthState.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T09:52:55.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T09:52:55.342Z"
             },
             {
               "$type": "Document",
@@ -94,12 +93,11 @@
               "RelativeToolTip": "BejelentkezesForm.Designer.cs",
               "ViewState": "AQIAAHkAAAAAAAAAAIAwwIsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T08:21:59.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T08:21:59.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BejelentkezesForm.cs",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\BejelentkezesForm.cs",
               "RelativeDocumentMoniker": "BejelentkezesForm.cs",
@@ -107,32 +105,31 @@
               "RelativeToolTip": "BejelentkezesForm.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAAAAEMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T08:21:22.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T08:21:22.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "BejelentkezesForm.cs [Design]",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\BejelentkezesForm.cs",
               "RelativeDocumentMoniker": "BejelentkezesForm.cs",
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\BejelentkezesForm.cs [Design]",
               "RelativeToolTip": "BejelentkezesForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T08:14:25.364Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-22T08:14:25.364Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAA4AAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswBUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T08:08:27.274Z"
+              "WhenOpened": "2025-01-22T08:08:27.274Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -144,12 +141,11 @@
               "RelativeToolTip": "MenuForm.Designer.cs",
               "ViewState": "AQIAAEMAAAAAAAAAAAAnwGEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T08:04:12.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T08:04:12.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Kliens",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\Kliens.csproj",
               "RelativeDocumentMoniker": "Kliens.csproj",
@@ -160,31 +156,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LetrehozForm.cs",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\LetrehozForm.cs",
               "RelativeDocumentMoniker": "LetrehozForm.cs",
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\LetrehozForm.cs",
               "RelativeToolTip": "LetrehozForm.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAYwBEAAAAiAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAWwDwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T07:58:51.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "LetrehozForm.cs [Design]",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\LetrehozForm.cs",
               "RelativeDocumentMoniker": "LetrehozForm.cs",
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\LetrehozForm.cs [Design]",
               "RelativeToolTip": "LetrehozForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T07:49:22.666Z"
+              "WhenOpened": "2025-01-22T07:49:22.666Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\User.cs",
               "RelativeDocumentMoniker": "User.cs",
@@ -196,13 +193,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MenuForm.cs",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\MenuForm.cs",
               "RelativeDocumentMoniker": "MenuForm.cs",
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\MenuForm.cs",
               "RelativeToolTip": "MenuForm.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADEAAAAgAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T06:51:01.592Z",
               "EditorCaption": ""
@@ -216,8 +213,7 @@
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\MenuForm.cs [Design]",
               "RelativeToolTip": "MenuForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T06:47:41.818Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-22T06:47:41.818Z"
             },
             {
               "$type": "Document",
@@ -240,14 +236,14 @@
               "RelativeDocumentMoniker": "Lekerdez.cs",
               "ToolTip": "C:\\git\\SOP\\projekt\\Kliens\\Lekerdez.cs",
               "RelativeToolTip": "Lekerdez.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB4AAAAAAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwBIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T04:42:39.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Lekerdez.cs [Design]",
               "DocumentMoniker": "C:\\git\\SOP\\projekt\\Kliens\\Lekerdez.cs",
               "RelativeDocumentMoniker": "Lekerdez.cs",
