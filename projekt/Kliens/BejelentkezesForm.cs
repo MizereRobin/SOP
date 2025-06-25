@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,24 +34,38 @@ namespace Kliens
 
         }
 
-        private void regButton_Click(object sender, EventArgs e)
+        private async void regButton_Click(object sender, EventArgs e)
         {
-            label1.Text = passwordText.Text;
-            if (nameText.Text.ToString() == Program.user.Name.ToString())
-            {
-                logButton.Text = "első jó";
-                if (passwordText.Text == Program.user.Password)
-                {
+            var httpClient = new HttpClient();
 
-                    Program.user.IsAuth = true;
-                    this.Close();
-                }
-            }
-            else
+            var loginData = new
             {
-                label2.Text = "valami nem jó";
+                username = nameText.Text,
+                password = passwordText.Text
+            };
+
+            string json = JsonConvert.SerializeObject(loginData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await httpClient.PostAsync("http://localhost:3000/login", content);
+                response.EnsureSuccessStatusCode();
+
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var tokenObj = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+                AuthState.Token = tokenObj["token"];
+
+                MessageBox.Show("Sikeres bejelentkezés.");
+                this.Hide();
+                new MenuForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba: " + ex.Message);
             }
         }
+
 
         private void passwordText_TextChanged(object sender, EventArgs e)
         {

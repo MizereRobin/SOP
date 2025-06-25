@@ -47,7 +47,7 @@ namespace Kliens
 
         private void létrehozásToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Program.user.IsAuth)
+            if (AuthState.IsAuth)
             {
                 LetrehozForm l = new LetrehozForm();
                 l.Show();
@@ -61,7 +61,7 @@ namespace Kliens
 
         private void módosításToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Program.user.IsAuth)
+            if (AuthState.IsAuth)
             {
                 ModositasForm l = new ModositasForm();
                 l.Show();
@@ -77,7 +77,7 @@ namespace Kliens
 
         private void törlésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Program.user.IsAuth)
+            if (AuthState.IsAuth)
             {
                 TorlesForm l = new TorlesForm();
                 l.Show();

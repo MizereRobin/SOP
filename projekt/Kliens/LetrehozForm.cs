@@ -15,6 +15,16 @@ namespace Kliens
         public LetrehozForm()
         {
             InitializeComponent();
+            if (AuthState.Token != null)
+            {
+                labelBejelentkezve.Text = "Bejelentkezve";
+                labelBejelentkezve.BackColor = Color.Green;
+            }
+            else
+            {
+                labelBejelentkezve.Text = "Nincs Bejelentkezve";
+                labelBejelentkezve.BackColor = Color.PaleVioletRed;
+            }
         }
 
         private void bejelentkezésToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,6 +53,20 @@ namespace Kliens
         private void lekérdezésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MenuForm.ChangeForm(sender, new Lekerdez());
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonTelepulesHozzaad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonKiosztasHozzaad_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
