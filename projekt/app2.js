@@ -46,6 +46,18 @@ app.get("/megyek", async (req, res) => {
   }
 });
 
+app.get("/telepulesnev", async (req, res) => {
+  try {
+     const [rows] = await pool.execute(
+      `SELECT nev FROM telepules`
+    );
+
+    res.json(rows.map(row => row.nev));
+  } catch (err) {
+    res.status(500).json({ error: "Lekérdezési hiba." });
+  }
+});
+
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
@@ -60,13 +72,32 @@ app.post("/addtelepules", authenticateToken, async (req, res) => {
   try {
     const { telepules } = req.query;
     if (!telepules) {
-      return res.status(400).json({ error: "telepules paraméter kötelező." });
+      return res.status(400).json({ error: "Paraméter megadása kötelező!" });
     }
 
     const adatok = telepules.split("!");
     const [rows] = await pool.execute(
       `INSERT INTO telepules VALUES (?,?)`,
       [adatok[0], adatok[1]]
+    );
+
+    res.json({ message: "Sikeres beszúrás.", rows });
+  } catch (err) {
+    res.status(500).json({ error: "INSERT hiba." });
+  }
+});
+
+app.post("/addkiosztas", authenticateToken, async (req, res) => {
+  try {
+    const { telepules } = req.query;
+    if (!telepules) {
+      return res.status(400).json({ error: "Paraméter megadása kötelező." });
+    }
+
+    const adatok = telepules.split("!");
+    const [rows] = await pool.execute(
+      `INSERT INTO telepules(frekvencia, csatorna, teljesitmeny, adohely, cim) VALUES (?,?,?,?,?)`,
+      [adatok[0], adatok[1], adatok[2], adatok[3], adatok[4]]
     );
 
     res.json({ message: "Sikeres beszúrás.", rows });

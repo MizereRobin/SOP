@@ -44,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelTelepules = new System.Windows.Forms.Label();
             this.comboBoxMegye = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTelepulesNev = new System.Windows.Forms.TextBox();
             this.groupBoxKiosztas = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxCim = new System.Windows.Forms.TextBox();
@@ -151,7 +151,7 @@
             this.groupBoxTelepules.Controls.Add(this.label2);
             this.groupBoxTelepules.Controls.Add(this.labelTelepules);
             this.groupBoxTelepules.Controls.Add(this.comboBoxMegye);
-            this.groupBoxTelepules.Controls.Add(this.textBox1);
+            this.groupBoxTelepules.Controls.Add(this.textBoxTelepulesNev);
             this.groupBoxTelepules.Location = new System.Drawing.Point(126, 93);
             this.groupBoxTelepules.Name = "groupBoxTelepules";
             this.groupBoxTelepules.Size = new System.Drawing.Size(185, 227);
@@ -194,14 +194,15 @@
             this.comboBoxMegye.Name = "comboBoxMegye";
             this.comboBoxMegye.Size = new System.Drawing.Size(165, 21);
             this.comboBoxMegye.TabIndex = 1;
+            this.comboBoxMegye.DropDown += new System.EventHandler(this.Frissit);
             this.comboBoxMegye.SelectedIndexChanged += new System.EventHandler(this.comboBoxMegye_SelectedIndexChanged);
             // 
-            // textBox1
+            // textBoxTelepulesNev
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxTelepulesNev.Location = new System.Drawing.Point(6, 61);
+            this.textBoxTelepulesNev.Name = "textBoxTelepulesNev";
+            this.textBoxTelepulesNev.Size = new System.Drawing.Size(166, 20);
+            this.textBoxTelepulesNev.TabIndex = 0;
             // 
             // groupBoxKiosztas
             // 
@@ -306,6 +307,7 @@
             this.comboBoxAdohely.Name = "comboBoxAdohely";
             this.comboBoxAdohely.Size = new System.Drawing.Size(188, 21);
             this.comboBoxAdohely.TabIndex = 6;
+            this.comboBoxAdohely.DropDown += new System.EventHandler(this.Frissit);
             // 
             // textBoxFrekvencia
             // 
@@ -361,7 +363,7 @@
         private System.Windows.Forms.ToolStripMenuItem regisztrációToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBoxTelepules;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTelepulesNev;
         private System.Windows.Forms.GroupBox groupBoxKiosztas;
         private System.Windows.Forms.Button buttonTelepulesHozzaad;
         private System.Windows.Forms.Label label2;

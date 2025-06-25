@@ -154,9 +154,36 @@
           "403": { "description": "Érvénytelen token" }
         }
       }
+    },
+
+    "/addkiosztas": {
+      "post": {
+        "summary": "Kiosztás beszúrása (Csak Bejelentkezve)",
+        "parameters": [
+          {
+            "name": "telepules",
+            "in": "query",
+            "required": true,
+            "description": "Formátum: frekvencia!csatorna!teljesitmeny!adohely!cim",
+            "schema": { "type": "string" }
+          }
+        ],
+        "security": [
+           { "bearerAuth": [] }
+        ],
+        "responses": {
+          "200": { "description": "Sikeres beszúrás" },
+          "400": { "description": "Hibás paraméter" },
+          "401": { "description": "Hiányzó token" },
+          "403": { "description": "Érvénytelen token" }
+        }
+      }
     }
   },
 
+
+
+  
   "components": {
     "securitySchemes": {
       "bearerAuth": {
