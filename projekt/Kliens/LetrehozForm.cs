@@ -92,19 +92,46 @@ namespace Kliens
             MenuForm.ChangeForm(sender, new Lekerdez());
         }
 
-        private void buttonTelepulesHozzaad_Click(object sender, EventArgs e) 
+        private async void buttonTelepulesHozzaad_Click(object sender, EventArgs e) 
         {
-            string adat = $"{textBoxTelepulesNev.Text}!{comboBoxMegye.SelectedText}";
+            string adat = $"{textBoxTelepulesNev.Text}%21{comboBoxMegye.SelectedText}";
 
-            // POST ide: .../addtelepules az adat változót kell átadni neki
+            string url = $"http://localhost:3000/addtelepules?telepules={adat}";
+
+            try
+            {
+                var response = await client.PostAsync(url, null);
+                response.EnsureSuccessStatusCode();
+
+                string result = await response.Content.ReadAsStringAsync();
+                MessageBox.Show("Sikeres kiosztás hozzáadás: " + result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt: " + ex.Message);
+            }
 
         }
 
-        private void buttonKiosztasHozzaad_Click(object sender, EventArgs e) 
+        private async void buttonKiosztasHozzaad_Click(object sender, EventArgs e) 
         {
             //Formátum: frekvencia!csatorna!teljesitmeny!adohely!cim
-            string adat = $"{textBoxFrekvencia.Text}!{textBoxCsatorna.Text}!{textBoxTeljesimeny.Text}!{comboBoxAdohely.SelectedText}!{textBoxCim.Text}";
-        
+            string adat = $"{textBoxFrekvencia.Text}%21{textBoxCsatorna.Text}%21{textBoxTeljesimeny.Text}%21{comboBoxAdohely.SelectedText}%21{textBoxCim.Text}";
+
+            string url = $"http://localhost:3000/addkiosztas?kiosztas={adat}";
+
+            try
+            {
+                var response = await client.PostAsync(url, null);
+                response.EnsureSuccessStatusCode();
+
+                string result = await response.Content.ReadAsStringAsync();
+                MessageBox.Show("Sikeres kiosztás hozzáadás: " + result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt: " + ex.Message);
+            }
         }
 
         private void comboBoxMegye_SelectedIndexChanged(object sender, EventArgs e) { }

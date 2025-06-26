@@ -89,14 +89,14 @@ app.post("/addtelepules", authenticateToken, async (req, res) => {
 
 app.post("/addkiosztas", authenticateToken, async (req, res) => {
   try {
-    const { telepules } = req.query;
-    if (!telepules) {
+    const { kiosztas } = req.query;
+    if (!kiosztas) {
       return res.status(400).json({ error: "Paraméter megadása kötelező." });
     }
 
-    const adatok = telepules.split("!");
+    const adatok = kiosztas.split("!");
     const [rows] = await pool.execute(
-      `INSERT INTO telepules(frekvencia, csatorna, teljesitmeny, adohely, cim) VALUES (?,?,?,?,?)`,
+      `INSERT INTO kiosztas(frekvencia, csatorna, teljesitmeny, adohely, cim) VALUES (?,?,?,?,?)`,
       [adatok[0], adatok[1], adatok[2], adatok[3], adatok[4]]
     );
 
